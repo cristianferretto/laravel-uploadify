@@ -51,7 +51,7 @@ trait UploadifyTrait
                 if ($value) {
                     return new FileCast($value, $this->uploadifyFiles[$key]);
                 }
-            case 'image':
+            case 'imagecast':
                 if ($value) {
                     return new ImageCast($value, $this->uploadifyImages[$key]);
                 }
@@ -81,7 +81,7 @@ trait UploadifyTrait
 
         if ($this->hasImageCasts()) {
             foreach (array_keys($this->uploadifyImages) as $key) {
-                $casts = array_merge([$key => 'image'], $casts);
+                $casts = array_merge([$key => 'imagecast'], $casts);
             }
         }
 
